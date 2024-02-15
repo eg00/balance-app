@@ -9,6 +9,7 @@ use App\Exceptions\OperationFailedException;
 use App\Models\User;
 use App\Repositories\UserRepository;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Validator as ValidatorFacade;
 use Illuminate\Validation\Rules;
 use Illuminate\Validation\Validator;
@@ -49,5 +50,15 @@ class UserService
         } catch (Throwable $e) {
             throw new OperationFailedException($e->getMessage(), 0, $e);
         }
+    }
+
+    public function getUserData(User $user): User
+    {
+        return $this->repository->getUserData($user);
+    }
+
+    public function getUserOperations(User $user): Collection
+    {
+        return $this->repository->getOperations($user);
     }
 }

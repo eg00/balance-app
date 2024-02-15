@@ -6,6 +6,7 @@ namespace App\Repositories;
 
 use App\Dto\CreateUserData;
 use App\Models\User;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Hash;
 
 class UserRepository
@@ -32,5 +33,17 @@ class UserRepository
         $this->balanceRepository->createForUser($user);
 
         return $user;
+    }
+
+    public function getUserData(User $user, int $operationsLimit = 5): User
+    {
+        return $user->load([
+            'balance',
+            'operations' => fn ($q) => $q->limit($operationsLimit)->orderBy('created_at', 'desc')]);
+    }
+
+    public function getOperations(User $user): Collection
+    {
+        return $user->operations()->get();
     }
 }

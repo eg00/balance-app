@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -18,15 +17,9 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/dashboard', fn () => Inertia::render('Dashboard'))->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function (): void {
-    Route::get('/', fn () => Inertia::render('Dashboard', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]));
+    Route::get('/', fn () => Inertia::render('Dashboard'))->name('dashboard');
+    Route::get('/operations', [UserController::class, 'operations'])->name('operations');
 });
 
 require __DIR__ . '/auth.php';
