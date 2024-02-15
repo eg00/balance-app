@@ -23,14 +23,14 @@ class UserService
     public function find(int $id): User
     {
         try {
-            $pokemon = $this->repository->find($id);
+            $user = $this->repository->find($id);
         } catch (ModelNotFoundException $e) {
             throw $e;
         } catch (Throwable $e) {
             throw new OperationFailedException($e->getMessage(), 0, $e);
         }
 
-        return $pokemon;
+        return $user;
     }
 
     public function validator(CreateUserData $data): Validator

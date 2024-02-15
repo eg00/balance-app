@@ -14,14 +14,15 @@
         "laravel/tinker": "^2.8"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest",
         "fakerphp/faker": "^1.9.1",
         "larastan/larastan": "^2.9",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.27",
+        "laravel/telescope": "^4.17",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
         "phpunit/phpunit": "^10.1",
+        "roave/security-advisories": "dev-latest",
         "slevomat/coding-standard": "^8.14",
         "spatie/laravel-ignition": "^2.0"
     },
