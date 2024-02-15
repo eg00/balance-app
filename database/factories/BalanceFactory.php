@@ -22,7 +22,7 @@ class BalanceFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'value' => Money::parse(random_int(0, 200000)),
+            'value' => Money::parse(random_int(0, 2_000_00)),
         ];
     }
 }

@@ -25,9 +25,11 @@
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix"/>
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix"/>
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousTraitNaming.SuperfluousSuffix"/>
+        <exclude name="SlevomatCodingStandard.Classes.DisallowConstructorPropertyPromotion.DisallowedConstructorPropertyPromotion"/>
         <exclude name="SlevomatCodingStandard.Commenting.DocCommentSpacing.IncorrectLinesCountBetweenDifferentAnnotationsTypes"/>
         <exclude name="SlevomatCodingStandard.Commenting.RequireOneLineDocComment"/>
         <exclude name="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment"/>
+        <exclude name="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration.InvalidFormat"/>
         <exclude name="SlevomatCodingStandard.ControlStructures.DisallowEmpty"/>
         <exclude name="SlevomatCodingStandard.ControlStructures.DisallowNullSafeObjectOperator"/>
         <exclude name="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator"/>
